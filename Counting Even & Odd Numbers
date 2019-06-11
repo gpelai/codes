@@ -1,0 +1,40 @@
+#Programa python para contagem de numeros impares e pares
+#Programa feito por Gabriel Pelai
+import os
+import sys
+
+def programa():
+        stop = str('n') #definição da string stop
+
+        while stop != 's':
+            lista1 = [] #Lista de numeros vazia
+            i=0
+            while i < 5: #Repetição while onde o usuario insere os numeros a lista
+                lista1.append(int(input('Insira um numero a lista: '))) #inserção dos numeros a lista
+                i += 1 #contador
+
+            par_cont, impar_cont = 0, 0
+
+            # repetição for para a interação com cada numero da lista
+            for num in lista1:
+                if num % 2 == 0: # checando condição
+                    par_cont += 1
+                else:
+                    impar_cont += 1
+
+            print("\nQtd de numeros pares: ", par_cont) #exibição
+            print("Qtd de numeros impares: ", impar_cont) #exibição
+
+            stop = str(input('\nParar o programa? s/n: ')) #requisito para mudar o estado da string stop e parar o programa ou usa-lo novamente
+
+            os.system('cls' if os.name == 'nt' else 'clear') #codigo para limpar o terminal
+
+    #Programa Principal
+
+começar = str('0') #definição da variavel
+começar = input(str('Você deseja iniciar o programa de contagem de numeros impares e pares? s/n: '))
+if começar == 's':
+    programa() #inicializa o programa
+else:
+    print('Programa encerrado')
+    sys.exit() #saida de sistema
